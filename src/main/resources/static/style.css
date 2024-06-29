@@ -1,0 +1,523 @@
+:root{
+    --color-primary: lightskyblue;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a{
+    color: var(--color-dark);
+}
+
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+small{
+    font-size: 0.76rem;
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+
+
+
+
+
+
+
+
+
+.accountSummary{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    width: 100%;
+    margin-left: 4%;
+
+}
+
+.accountSummary > div{
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+    
+}
+
+.accountSummary > div:hover{
+    box-shadow: none;
+}
+
+.accountSummary > div .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.accountSummary .progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.accountSummary svg{
+    width: 7rem;
+    height: 7rem;
+}
+
+.accountSummary .balance, .initial svg circle{
+    stroke: var(--color-primary);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.accountSummary .investment svg circle{
+    stroke: var(--color-danger);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.accountSummary svg circle{
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+.accountSummary .progress .number {
+    position: absolute;
+    top: -3px;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1; 
+}
+
+.material-symbols-outlined{
+    margin-left: 2px;
+}
+select {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+
+  
+}
+
+/* .accountSummary .progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+} */
+
+
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: lightskyblue;
+    padding: 10px 2rem;
+    border-radius: 10px;
+    margin-bottom: 8rem;
+
+}
+
+.header-title{
+    color: whitesmoke;
+}
+
+
+
+.modal-overlay, .add-stock {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.modal, .stock {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 80%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header, .stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.modal-header h2 , .stock-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.modal-close , .stock-close {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.modal-body, .stock-body {
+    margin-top: 15px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+form .createAccountForm{
+    display: flex;
+    text-align: center;
+}
+
+form .submitStockForm{
+    display: flex;
+    text-align: center;
+}
+
+table{
+    width: 60%;
+    border-radius: 5rem;
+    margin: 1rem auto;
+    text-align: center;
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+    padding: var(--card-padding);
+}
+
+
+
+table tbody td{
+    height: 3rem;
+    border-bottom: 3px solid var(--color-primary);
+    color: var(--color-dark);
+    font-size: 20px;
+}
+
+table th{
+    color: var(--color-dark);
+    font-size: 25px;
+}
+
+
+
+.tableTitle{
+    margin-top: 20rem;
+    text-align: center;
+    width: 100%;
+    color: var(--color-dark);
+    font-size: 25px;
+}
+
+table #total-companies , #total-price, #total-quantity{
+    margin-top: 2px;
+    font-size: 20px;
+    color: var(--color-dark);
+}
+
+.header{
+    margin-top: 20rem;
+    margin-bottom: 10rem;
+    width: 100%;
+    text-align: center;
+}
+
+.historyTable-title{
+    margin-left: 21%;
+}
+
+.historyTable-table{
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+    float: left;
+    padding: var(--card-padding);    
+    margin-left: 4%;
+    width: 40%;
+}
+
+
+
+
+
+
+/* General button styles */
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn{
+    background-color: red;
+    color: white;
+}
+.modal-btn{
+    background-color: #4CAF50; 
+    color: white;
+    margin-right: 20px;
+
+}
+
+#fetchAllStocks{
+    background-color: #008CBA;
+    color: white;
+}
+
+.header-createAccountBtn {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.createAccountBtn {
+    background-color: #4CAF50; 
+    color: white; 
+}
+
+.createAccountBtn:hover {
+    background-color: #45a049; 
+}
+
+
+.header-addStock {
+    display: inline-block;
+}
+
+.addStockBtn {
+    background-color: #008CBA; 
+    color: white; 
+}
+
+.addStockBtn:hover {
+    background-color: #007bb5; 
+}
+
+.header-createAccountBtn, .header-addStock {
+    margin: 10px 0; 
+    text-align: center; 
+}
+
+.stock-body {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stock-body form {
+    display: flex;
+    flex-direction: column;
+}
+
+.stock-body label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stock-body input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.stock-body input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.stock-body form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stock-body form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.modal-body {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-body input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.modal-body input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.modal-body form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-body form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.table-container {
+    overflow-x: auto; 
+}
+
+.stockTable {
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    margin-top: 1.5rem;
+}
+
+.stockTable thead {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}

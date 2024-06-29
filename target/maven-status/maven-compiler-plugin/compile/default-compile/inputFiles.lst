@@ -1,0 +1,17 @@
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\AppConfig\AppConfig.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\controller\AccountController.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\controller\StockController.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\controller\StockPriceHistoryController.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\dto\StockApiResponse.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\dto\StockPrice.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\model\Account.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\model\Stock.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\model\StockPriceHistory.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\repository\AccountRepository.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\repository\StockPriceHistroyRepository.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\repository\StockRepository.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\service\AccountService.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\service\DataInitializer.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\service\StockPriceHistroyService.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\service\StockService.java
+C:\Users\josep\OneDrive\Desktop\stocks\src\main\java\com\stock_api\stocks\StocksApplication.java

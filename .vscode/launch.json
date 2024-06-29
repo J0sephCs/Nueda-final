@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-StocksApplication<stocks>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.stock_api.stocks.StocksApplication",
+            "projectName": "stocks",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
