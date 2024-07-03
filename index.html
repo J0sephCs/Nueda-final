@@ -1,0 +1,247 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="index.js"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light" />
+
+    <!-- Link to the local CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    
+
+    <!-- Link to Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Page title -->
+    <title>Stock Management</title>
+</head>
+<body>
+    <div class="header-wrapper">
+        <div class="header-title">
+            <h1>Portfolio Dashboard</h1>
+            <h2 class="header-username" id="header-username"></h2>
+        </div>
+        <div class="header-createAccountBtn">
+            <button type="button" class="createAccountBtn" onclick="openModal()">Create Account</button>
+        </div>
+        <div class="header-addStock">
+            <button type="button" class="addStockBtn" onclick="openStockForm()">Add Stock</button>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Create Account</h2>
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="createAccountForm" onsubmit="submitForm(event)">
+                    <label for="user">Username:</label>
+                    <input type="text" name="user" placeholder="Username" aria-label="Username" required /><br><br>
+
+                    <label for="bal">Balance:</label>
+                    <input type="number" name="bal" placeholder="Balance" aria-label="Balance" required />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="createAccountForm" class="modal-btn">Submit</button>
+                <button type="button" onclick="closeModal()" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="add-stock" class="add-stock">
+        <div class="stock">
+            <div class="stock-header">
+                <h2>Add Stock</h2>
+                <span class="stock-close" onclick="closeStockForm()">&times;</span>
+            </div>
+            <div class="stock-body">
+                <form id="submitStockForm" onsubmit="submitStock(event)">
+                    <label for="ticker">Ticker:</label>
+                    <input type="text" name="ticker" placeholder="Ticker" aria-label="Ticker" required /><br><br>
+            
+                    <label for="company">Company:</label>
+                    <input type="text" name="company" placeholder="Company" aria-label="Company" required /><br><br>
+            
+                    <label for="price">Price:</label>
+                    <input type="number" name="price" placeholder="Price" aria-label="Price" required /><br><br>
+            
+                    <label for="quant">Quantity:</label>
+                    <input type="number" name="quant" placeholder="Quantity" aria-label="Quantity" required /><br><br>
+            
+                    <label for="type">Type:</label>
+                    <select name="type">
+                        <option value="select">Select a asset</option>
+                        <option value="ETF">ETF</option>
+                        <option value="Stock">Stock</option>
+                        <option value="Bond">Bond</option>
+                        <option value="Crypto">Crypto</option>
+                        <option value="Precious Metal">Precious Metal</option>
+                        <option value="Other">Other</option>
+                      </select>                
+                    </form>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="submit" form="submitStockForm" class="modal-btn">Submit</button>
+                <button type="button" onclick="closeStockForm()" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="intro" style="margin: 130px;">
+         <span class="title" style="font-size:60px">Build Your Investment Portfolio Today!</span>
+         <br>
+         <br>
+         <br>
+         <br>
+         <span class="about" style="font-size:30px">Invest smartly by monitoring the status of various stocks. Build a mock portfolio tailored to your finances and goals and generate a report on your best investment strategy!</span>
+    </div>
+
+
+<div class="accountSummary">
+    <div class="initial">
+        <div class="middle">
+            <span class="material-symbols-outlined">account_balance</span>            
+            <div class="left">
+                <h3>Initial balance</h3>
+                <h1 id="initial-balance">$0.00</h1>
+            </div>
+            <div class="progress">
+                <svg>
+                    <circle cx='38' cy='38' r='36'></circle>
+                </svg>
+                <div class="number">
+                    <p>81%</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="balance">
+        <div class="middle">
+            <span class="material-symbols-outlined">account_balance</span>
+            <div class="left">
+                <h3>Cash balance</h3>
+                <h1 id="account-balance">$0.00</h1>
+            </div>
+            <div class="progress">
+                <svg>
+                    <circle cx='38' cy='38' r='36'></circle>
+                </svg>
+                <div class="number">
+                    <p>81%</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!---------------END OF Total Investment----------------------------->
+
+
+    <div class="investment">
+        <div class="middle">
+            <span class="material-symbols-outlined">attach_money</span>
+            <div class="left">
+                <h3>Total Investment</h3>
+                <h1 id="account-investment">$0.00</h1>
+            </div>
+            <div class="progress">
+                <svg>
+                    <circle cx='38' cy='38' r='36'></circle>
+                </svg>
+                <div class="number">
+                    <p>81%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------END OF STANDARD DEVIATION------------------------->
+
+
+<h2 class="tableTitle" style="font-size:30px">My Stocks</h2>
+<table class="stockTable">
+    <thead>
+      <tr>
+        <th scope="col">Ticker</th>
+        <th scope="col">Company</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      
+    </tbody>
+    <tfoot>
+        <tr>
+            <th scope="row">Total</th>
+            <td id="total-companies">0</td>
+            <td id="total-price">$0.00</td>
+            <td><button id="fetchAllStocks">Show All Stocks</button></td>
+        </tr>
+    </tfoot>
+</table>
+
+
+<div class="investing-info" style="margin: 100px;">
+    <span class="tips-title" style="font-size:26px">Investing Tips</span>
+    <br>
+    <br>
+    <br>
+    <span class="tips-body" style="font-size:18px">
+        <ul>
+            <li>To <strong>minimize risk,</strong> it is important to <strong>diversify</strong> your portfolio between a variety of securities (consider quanitity and industry as well!)</li>
+            <br>
+            <li> Consider your <strong>risk tolerance</strong> when determining which assets to invest in: </li>
+            <br> &nbsp &nbsp - Stocks are riskier and should make up only a small portion of the portfolio, 
+            <br> &nbsp &nbsp - Bonds are less risky but have a lower yield, 
+            <br> &nbsp &nbsp - Mutual funds lower the risks of securities through diversification but can have high fees
+            <br><br>
+            <li>Re-analyze your portfolio over time and see how stock prices are changing, if a security is increasing in price and experiencing crowding, it is likely to crash </li>
+        </ul>
+</div>
+
+
+<Section class="historyCalculations">
+    <div class= header>
+        <h1>History & Calculations</h1>
+    </div>
+
+    <div class="historyTable" >
+        <h2 class="historyTable-title">Historical Prices</h2>
+            <table class="historyTable-table" >
+                <thead> 
+                <tr>
+                    <th scope="col">Ticker</th>
+                    <th scope="col">Closing Price</th>
+                    <th scope="col">Date</th>
+                </tr>
+                </thead>
+                <tbody id="historyTable-body">
+                
+                
+                </tbody>
+            </table>
+    </div>
+</Section>
+
+
+
+
+</body>
+</html>
+
+
