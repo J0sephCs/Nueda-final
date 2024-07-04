@@ -185,6 +185,42 @@ async function submitStock(event){
     }
 }
 
+async function fetchLastPrice(event){
+    event.preventDefault();
+    
+    const stockSymbol= document.getElementById('stockSymbol').value;
+    const quantity= document.getElementById('quantity').value;
+
+    console.log("Sending data:", { stockSymbol, quantity });
+
+
+
+    fetch(`http://localhost:8080/twelve/getPastPrice?stockSymbol=${stockSymbol}`)
+        .then(response=> response.json())
+        .then(data=>{
+            if(data){
+                addToHistoryTable(stockSymbol, quantity, data);
+            }else{
+                alert('No data: '+stockSymbol);
+            }
+        })
+        .catch(error=>{
+            console.error('Error: ' +error);
+        });
+}
+
+function addToHistoryTable(stockSymbol, quantity, lastPrice){
+    const body= document.getElementById('historyTable-body');
+    const row= document.createElement('tr');
+
+    row.innerHTML= `
+        <td>${stockSymbol}</td>
+        <td>${quantity}</td>
+        <td>${lastPrice}</td>
+    `;
+
+    body.appendChild(row);
+}
 
 
 

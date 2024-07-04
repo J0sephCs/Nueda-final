@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.stock_api.stocks.model.Stock;
 import com.stock_api.stocks.service.StockService;
+import com.stock_api.stocks.service.TwelveDataService;
 
 @RestController
 @RequestMapping("/stock")
@@ -23,6 +24,9 @@ public class StockController {
 
     @Autowired
     public StockService stockService;
+
+    @Autowired
+    public TwelveDataService twelveDataService;
 
     
 
@@ -83,6 +87,8 @@ public class StockController {
         return ResponseEntity.ok(totalvalue);
 
     }
+
+   
 
     
 

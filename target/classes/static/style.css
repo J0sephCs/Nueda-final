@@ -1,5 +1,5 @@
 :root{
-    --color-primary: lightskyblue;
+    --color-primary: #c8d7f7;
     --color-danger: #FF0060;
     --color-success: #1B9C85;
     --color-warning: #F7D060;
@@ -8,11 +8,14 @@
     --color-dark: #363949;
     --color-light: rgba(132, 139, 200, 0.18);
     --color-dark-variant: #677483;
-    --color-background: #f6f6f9;
+    /*--color-background: #f6f6f9;     #5a7fe5; */
+    --color-background: #ebf0ff; 
 
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
     --border-radius-2: 1.2rem;
+    --border-radius-3: 0.4rem;
+
 
     --card-padding: 1.8rem;
     --padding-1: 1.2rem;
@@ -40,13 +43,14 @@
 }
 
 html{
-    font-size: 14px;
+    font-size: 17px;
 }
 
 body{
     width: 100vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 0.88rem;
     user-select: none;
     overflow-x: hidden;
@@ -67,11 +71,12 @@ h1{
 h2{
     font-weight: 600;
     font-size: 1.4rem;
+
 }
 
 h3{
     font-weight: 500;
-    font-size: 0.87rem;
+    font-size: 1rem;
 }
 
 small{
@@ -105,10 +110,6 @@ b{
 .warning{
     color: var(--color-warning);
 }
-
-
-
-
 
 
 
@@ -159,16 +160,22 @@ b{
     height: 7rem;
 }
 
-.accountSummary .balance, .initial svg circle{
-    stroke: var(--color-primary);
+.accountSummary .investment svg circle{
+    stroke: #007bff;
     stroke-dashoffset: -30;
     stroke-dasharray: 200;
 }
 
-.accountSummary .investment svg circle{
+.accountSummary .balance svg circle{
     stroke: var(--color-danger);
-    stroke-dashoffset: -30;
+    stroke-dashoffset: 60;
     stroke-dasharray: 200;
+}
+
+.accountSummary .initial svg circle{
+    stroke: #f7ed6a;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 282.74;
 }
 
 .accountSummary svg circle{
@@ -208,12 +215,7 @@ select {
   
 }
 
-/* .accountSummary .progress{
-    position: relative;
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-} */
+
 
 
 
@@ -222,18 +224,58 @@ select {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background: lightskyblue;
-    padding: 10px 2rem;
-    border-radius: 10px;
+    background: #1c2e9e;       
+    padding: 20px 2rem;
+    border-radius: 0px;
     margin-bottom: 8rem;
 
 }
 
-.header-title{
-    color: whitesmoke;
-}
+        .intro{
+            text-align: center;
+            color: #343a5a; 
 
+        }
+        .title{
+            color: #1c2e9e;
+            font-weight: bold;
+        }
 
+        .header-title{
+            color: whitesmoke;
+            
+        }
+
+/*investing tip box*/
+.investing-info {
+    width: 800px;
+    height: 500px;
+    padding: 50px;
+    /*background-color: #4a66f1;*/
+    background-color:#6179ef;
+    border: 15px solid #1c2e9e;
+    border-radius: 20px;
+    position: relative; /* or relative */
+    left: 24%;
+    box-shadow: var(--box-shadow);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+    }
+    
+        .tips-title{
+            color: #ffffff;
+            margin-left: 35.5%;
+            font-weight: bold; 
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-decoration: underline;
+            
+        }
+ 
+        .tips-body{
+            color: whitesmoke;
+            text-align: center;
+
+        }
 
 .modal-overlay, .add-stock {
     display: none;
@@ -309,7 +351,7 @@ table{
 
 table tbody td{
     height: 3rem;
-    border-bottom: 3px solid var(--color-primary);
+    border-bottom: 3px solid #599fea;
     color: var(--color-dark);
     font-size: 20px;
 }
@@ -322,7 +364,7 @@ table th{
 
 
 .tableTitle{
-    margin-top: 20rem;
+    margin-top: 15rem;
     text-align: center;
     width: 100%;
     color: var(--color-dark);
@@ -337,26 +379,29 @@ table #total-companies , #total-price, #total-quantity{
 
 .header{
     margin-top: 20rem;
-    margin-bottom: 10rem;
+    margin-bottom: 1rem;
     width: 100%;
     text-align: center;
 }
 
-.historyTable-title{
-    margin-left: 21%;
-}
+
 
 .historyTable-table{
     background: var(--color-white);
     box-shadow: var(--box-shadow);
-    float: left;
+    text-align: center;
     padding: var(--card-padding);    
-    margin-left: 4%;
     width: 40%;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+
 }
 
-
-
+.historyTable-table thead {
+    background-color: var(--color-primary);
+    text-decoration-line: underline black;
+    color: var(--color-white);
+}
 
 
 
@@ -381,9 +426,9 @@ button {
 
 }
 
-#fetchAllStocks{
-    background-color: #008CBA;
-    color: white;
+#fetchAllStocks , #searchBtn{
+    background-color: #f7f083;      /*FIX THIS */
+    color: rgb(33, 29, 29);
 }
 
 .header-createAccountBtn {
@@ -392,12 +437,18 @@ button {
 }
 
 .createAccountBtn {
-    background-color: #4CAF50; 
+    /*background-color: #4a66f1;*/
+    background-color: #82a2e8;     /*button background  #3c56db */
     color: white; 
+    position: absolute; /* or relative */
+    left: 75%;
+    top: 3%
 }
 
 .createAccountBtn:hover {
-    background-color: #45a049; 
+    /*background-color: #82a2e8; */
+    background-color: #4a66f1;  
+    
 }
 
 
@@ -406,12 +457,16 @@ button {
 }
 
 .addStockBtn {
-    background-color: #008CBA; 
-    color: white; 
+    background-color: #82a2e8; 
+    color: white;
+    position: absolute;
+    left: 88%;
+    top: 3%
+   
 }
 
 .addStockBtn:hover {
-    background-color: #007bb5; 
+    background-color:  #4a66f1; 
 }
 
 .header-createAccountBtn, .header-addStock {
@@ -519,26 +574,14 @@ button {
 
 .stockTable thead {
     background-color: var(--color-primary);
+    text-decoration-line: underline black;
     color: var(--color-white);
 }
 
 
+#priceSearch{
+    padding-top: 40px;
+    text-align: center;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 

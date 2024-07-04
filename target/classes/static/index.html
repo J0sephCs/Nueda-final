@@ -10,8 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light" />
 
-    <!-- Link to the local CSS file -->
+    <!-- Link to the local CSS files -->
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="footer.css" />
+
+    
 
     
 
@@ -24,7 +27,7 @@
 <body>
     <div class="header-wrapper">
         <div class="header-title">
-            <h1>Stock Dashboard</h1>
+            <h1>Portfolio Dashboard</h1>
             <h2 class="header-username" id="header-username"></h2>
         </div>
         <div class="header-createAccountBtn">
@@ -86,8 +89,8 @@
                         <option value="Crypto">Crypto</option>
                         <option value="Precious Metal">Precious Metal</option>
                         <option value="Other">Other</option>
-                      </select>                
-                    </form>
+                    </select>                
+                </form>
             </div>
             
             <div class="modal-footer">
@@ -96,6 +99,15 @@
             </div>
         </div>
     </div>
+
+    <div class="intro" style="margin: 130px;">
+        <span class="title" style="font-size:60px">Build Your Investment Portfolio Today!</span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <span class="about" style="font-size:30px">Invest smartly by monitoring the status of various stocks. Build a mock portfolio tailored to your finances and goals and generate a report on your best investment strategy!</span>
+   </div>
 
     
 
@@ -112,7 +124,7 @@
                     <circle cx='38' cy='38' r='36'></circle>
                 </svg>
                 <div class="number">
-                    <p>81%</p>
+                    <p>100%</p>
                 </div>
             </div>
             
@@ -131,14 +143,14 @@
                     <circle cx='38' cy='38' r='36'></circle>
                 </svg>
                 <div class="number">
-                    <p>81%</p>
+                    <p>60%</p>
                 </div>
             </div>
             
         </div>
     </div>
 
-    <!---------------END OF Total Investment----------------------------->
+    <!---------------END OF ACCOUNT BALANCE----------------------------->
 
 
     <div class="investment">
@@ -159,10 +171,10 @@
         </div>
     </div>
 </div>
-<!----------------END OF STANDARD DEVIATION------------------------->
+<!----------------END OF TOTAL INVESTMENT------------------------->
 
 
-<h2 class="tableTitle">My Stocks</h2>
+<h1 class="tableTitle">My Stocks</h1>
 <table class="stockTable">
     <thead>
       <tr>
@@ -189,17 +201,26 @@
 
 <Section class="historyCalculations">
     <div class= header>
-        <h1>History & Calculations</h1>
+        <h1>Historical Price Lookup</h1>
     </div>
 
     <div class="historyTable" >
-        <h2 class="historyTable-title">Historical Prices</h2>
+
+            <form id="priceSearch" onsubmit="fetchLastPrice(event)">
+                <label for="stockSymbol" style="font-size: x-large;">Stock Symbol:</label>
+                <input type="text" id="stockSymbol" required>
+                <label for="quantity" style="font-size: x-large;">Quantity:</label>
+                <input type="number" id="quantity" required>
+                <button type="submit" form="priceSearch" id="searchBtn">Search</button>
+            </form>
+
+
             <table class="historyTable-table" >
                 <thead> 
                 <tr>
                     <th scope="col">Ticker</th>
-                    <th scope="col">Closing Price</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Last Closing Price</th>
                 </tr>
                 </thead>
                 <tbody id="historyTable-body">
@@ -211,8 +232,42 @@
 </Section>
 
 
+<div class="investing-info" style="margin: 100px;">
+    <span class="tips-title" style="font-size:26px">Investing Tips</span>
+    <br>
+    <br>
+    <br>
+    <span class="tips-body" style="font-size:18px">
+        <ul>
+            <li>To <strong>minimize risk,</strong> it is important to <strong>diversify</strong> your portfolio between a variety of securities (consider quanitity and industry as well!)</li>
+            <br>
+            <li> Consider your <strong>risk tolerance</strong> when determining which assets to invest in: </li>
+            <br> &nbsp &nbsp - Stocks are riskier and should make up only a small portion of the portfolio, 
+            <br> &nbsp &nbsp - Bonds are less risky but have a lower yield, 
+            <br> &nbsp &nbsp - Mutual funds lower the risks of securities through diversification but can have high fees
+            <br><br>
+            <li>Re-analyze your portfolio over time and see how stock prices are changing, if a security is increasing in price and experiencing crowding, it is likely to crash </li>
+        </ul>
+</div>
 
 
+<footer>
+    <div class="container">
+        <div class="footer-section social-media">
+            <h4>Follow Us</h4>
+            <a href="https://facebook.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+    <p style="color: white;">&copy; 2024. All rights reserved.</p>
+</footer>
 
 
 </body>

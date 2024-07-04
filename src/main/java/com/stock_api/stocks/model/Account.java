@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Account {
 
     @Id
-    @Column(name="account_id")
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer accountid;
 
