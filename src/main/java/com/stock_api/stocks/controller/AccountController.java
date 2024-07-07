@@ -13,6 +13,9 @@ import com.stock_api.stocks.model.Account;
 import com.stock_api.stocks.model.Stock;
 import com.stock_api.stocks.service.AccountService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+
 @RestController
 @RequestMapping("/account")
 public class AccountController {
@@ -24,13 +27,15 @@ public class AccountController {
         this.accountService= accountService;
     }
 
+    @Operation(summary = "Save a new account")
     @PostMapping("/saveAccount")
     public Account saveAccount(@RequestBody Account account){
         return accountService.saveAccount(account);
     }
 
+    @Operation(summary = "Add stock to portfolio")
     @PostMapping("/{id}/addToPortfolio")
-    public ResponseEntity<String> addStockToPortfolio(@PathVariable Integer id, @RequestBody Stock stock){
+    public ResponseEntity<String> addStockToPortfolio(@Parameter(description = "Account ID") @PathVariable Integer id, @RequestBody Stock stock){
         Account account= accountService.getAccountById(id);
 
         if(account == null){
@@ -44,8 +49,9 @@ public class AccountController {
         return ResponseEntity.ok("Stock added to portfolio successfully");
     }
 
+    @Operation(summary = "Delete stock from portfolio")
     @DeleteMapping("/{id}/deleteFromPortfolio")
-    public ResponseEntity<String> deleteStockFromPortfolio(@PathVariable Integer id, @RequestBody Stock stock){
+    public ResponseEntity<String> deleteStockFromPortfolio(@Parameter(description = "Account ID") @PathVariable Integer id, @RequestBody Stock stock){
         Account account= accountService.getAccountById(id);
 
         if(account != null){
