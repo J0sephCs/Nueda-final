@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.stock_api.stocks.service.TwelveDataService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+
 @RestController
 @RequestMapping("/twelve")
-public class TwelveDataServiceController{
+public class TwelveDataServiceController {
 
     @Autowired
     public TwelveDataService twelveDataService;
@@ -19,13 +22,9 @@ public class TwelveDataServiceController{
         this.twelveDataService = twelveDataService;
     }
 
-
+    @Operation(summary = "Get past price of a stock")
     @GetMapping("/getPastPrice")
-    public Double getPastPrice(@RequestParam String stockSymbol) {
-
+    public Double getPastPrice(@Parameter(description = "Stock symbol") @RequestParam String stockSymbol) {
         return twelveDataService.fetchLatestPrice(stockSymbol);
     }
-  
-
-
 }

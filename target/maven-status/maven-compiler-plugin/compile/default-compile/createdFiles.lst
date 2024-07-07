@@ -1,0 +1,16 @@
+com\stock_api\stocks\dto\StockPrice.class
+com\stock_api\stocks\controller\StockController.class
+com\stock_api\stocks\repository\AccountRepository.class
+com\stock_api\stocks\model\StockPriceHistory.class
+com\stock_api\stocks\repository\StockRepository.class
+com\stock_api\stocks\repository\StockPriceHistroyRepository.class
+com\stock_api\stocks\model\Stock.class
+com\stock_api\stocks\controller\TwelveDataServiceController.class
+com\stock_api\stocks\dto\StockApiResponse.class
+com\stock_api\stocks\service\AccountService.class
+com\stock_api\stocks\StocksApplication.class
+com\stock_api\stocks\AppConfig\AppConfig.class
+com\stock_api\stocks\controller\AccountController.class
+com\stock_api\stocks\service\StockService.class
+com\stock_api\stocks\service\TwelveDataService.class
+com\stock_api\stocks\model\Account.class
