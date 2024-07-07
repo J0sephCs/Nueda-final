@@ -199,38 +199,6 @@
     </tfoot>
 </table>
 
-<Section class="historyCalculations">
-    <div class= header>
-        <h1>Historical Price Lookup</h1>
-    </div>
-
-    <div class="historyTable" >
-
-            <form id="priceSearch" onsubmit="fetchLastPrice(event)">
-                <label for="stockSymbol" style="font-size: x-large;">Stock Symbol:</label>
-                <input type="text" id="stockSymbol" required>
-                <label for="quantity" style="font-size: x-large;">Quantity:</label>
-                <input type="number" id="quantity" required>
-                <button type="submit" form="priceSearch" id="searchBtn">Search</button>
-            </form>
-
-
-            <table class="historyTable-table" >
-                <thead> 
-                <tr>
-                    <th scope="col">Ticker</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Last Closing Price</th>
-                </tr>
-                </thead>
-                <tbody id="historyTable-body">
-                
-                
-                </tbody>
-            </table>
-    </div>
-</Section>
-
 
 <div class="investing-info" style="margin: 100px;">
     <span class="tips-title" style="font-size:26px">Investing Tips</span>
@@ -249,6 +217,37 @@
             <li>Re-analyze your portfolio over time and see how stock prices are changing, if a security is increasing in price and experiencing crowding, it is likely to crash </li>
         </ul>
 </div>
+
+
+<Section class="historyCalculations">
+    <div class= header>
+        <h1>Historical Price Lookup</h1>
+    </div>
+
+    <div class="historyTable" >
+
+            <form id="priceSearch" onsubmit="fetchLastPrice(event)">
+                <label for="stockSymbol" style="font-size: x-large;">Stock Symbol:</label>
+                <input type="text" id="stockSymbol" required>
+                <button type="submit" form="priceSearch" id="searchBtn">Search</button>
+            </form>
+
+
+            <table class="historyTable-table" >
+                <thead> 
+                <tr>
+                    <th scope="col">Ticker</th>
+                    <th scope="col">Last Closing Price</th>
+                </tr>
+                </thead>
+                <tbody id="historyTable-body">
+                
+                
+                </tbody>
+            </table>
+    </div>
+</Section>
+
 
 
 <footer>

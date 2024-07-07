@@ -167,7 +167,7 @@ b{
 }
 
 .accountSummary .balance svg circle{
-    stroke: var(--color-danger);
+    stroke: #82cf6a;
     stroke-dashoffset: 60;
     stroke-dasharray: 200;
 }
@@ -378,7 +378,7 @@ table #total-companies , #total-price, #total-quantity{
 }
 
 .header{
-    margin-top: 20rem;
+    margin-top: 10rem;
     margin-bottom: 1rem;
     width: 100%;
     text-align: center;
@@ -393,7 +393,7 @@ table #total-companies , #total-price, #total-quantity{
     padding: var(--card-padding);    
     width: 40%;
     margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 40rem;
 
 }
 
@@ -570,6 +570,7 @@ button {
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
     margin-top: 1.5rem;
+    margin-bottom: 15rem;
 }
 
 .stockTable thead {

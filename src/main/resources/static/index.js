@@ -189,9 +189,8 @@ async function fetchLastPrice(event){
     event.preventDefault();
     
     const stockSymbol= document.getElementById('stockSymbol').value;
-    const quantity= document.getElementById('quantity').value;
 
-    console.log("Sending data:", { stockSymbol, quantity });
+    console.log("Sending data:", { stockSymbol });
 
 
 
@@ -199,7 +198,7 @@ async function fetchLastPrice(event){
         .then(response=> response.json())
         .then(data=>{
             if(data){
-                addToHistoryTable(stockSymbol, quantity, data);
+                addToHistoryTable(stockSymbol, data);
             }else{
                 alert('No data: '+stockSymbol);
             }
@@ -209,13 +208,12 @@ async function fetchLastPrice(event){
         });
 }
 
-function addToHistoryTable(stockSymbol, quantity, lastPrice){
+function addToHistoryTable(stockSymbol, lastPrice){
     const body= document.getElementById('historyTable-body');
     const row= document.createElement('tr');
 
     row.innerHTML= `
         <td>${stockSymbol}</td>
-        <td>${quantity}</td>
         <td>${lastPrice}</td>
     `;
 
